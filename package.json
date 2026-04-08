@@ -1,0 +1,18 @@
+{
+  "name": "phantom-filament",
+  "version": "1.0.0",
+  "main": "test_frontend.js",
+  "scripts": {
+    "setup": "powershell -ExecutionPolicy Bypass -File ./scripts/dev-up.ps1 -SetupOnly",
+    "dev": "powershell -ExecutionPolicy Bypass -File ./scripts/dev-up.ps1 -StartServices",
+    "start": "npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "playwright": "^1.58.2"
+  }
+}

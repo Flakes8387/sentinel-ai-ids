@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+backend/venv/
+backend/env/
+backend/.venv/
+.venv/
+.venv313/
+
+# Node/React (Frontend)
+frontend/node_modules/
+frontend/dist/
+frontend/.nx/
+*/npm-debug.log*
+*/yarn-debug.log*
+*/yarn-error.log*
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+backend/.env
+frontend/.env
+*.pem
+*.key
+*.cert
+
+# Log Files
+*.log
+backend/*.log
+frontend/*.log
+
+# IDE & OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Model Artifacts (if you want to exclude trained models uncomment below)
+# backend/*.joblib
+# backend/*.h5
+
+# Testing/Cache
+.pytest_cache/
+coverage.xml
+htmlcov/

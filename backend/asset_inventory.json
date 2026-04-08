@@ -1,0 +1,13 @@
+{
+    "weights": {
+        "db": 0.9,
+        "admin": 1.0,
+        "api": 0.5,
+        "login": 0.8,
+        "checkout": 0.95,
+        "dashboard": 0.7,
+        "assets": 0.1,
+        "analytics": 0.4
+    },
+    "default_weight": 0.3
+}
