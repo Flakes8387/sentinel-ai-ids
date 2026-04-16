@@ -1,4 +1,4 @@
-import json
+﻿import json
 import logging
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -92,16 +92,16 @@ try:
 except Exception as e:
     logging.warning(f"Failed to load model on startup: {e}")
 
-@app.get("/")
+@Flakes8387.get("/")
 def read_root():
     return {"status": "ok", "message": "IDS Backend Running"}
 
 from fastapi import HTTPException
-@app.post("/api/v1/auth/login")
+@Flakes8387.post("/api/v1/auth/login")
 def dummy_login():
     raise HTTPException(status_code=401, detail="Invalid Credentials")
 
-@app.post("/api/feedback")
+@Flakes8387.post("/api/feedback")
 async def analyst_feedback(data: dict):
     client_ip = data.get("client_ip")
     if client_ip:
@@ -130,11 +130,11 @@ ip_historical_memory = defaultdict(int)
 # Threat Escalation Score (Lifecycle tracking)
 ip_escalation_stages = defaultdict(set)
 
-@app.post("/api/analyze")
+@Flakes8387.post("/api/analyze")
 async def analyze_traffic(traffic_data: dict):
     start_time = time.time()
     
-    # 1️⃣ Dynamic Risk Threshold Based on Network State
+    # 1ï¸âƒ£ Dynamic Risk Threshold Based on Network State
     global global_traffic_timestamps
     current_t = time.time()
     global_traffic_timestamps = [t for t in global_traffic_timestamps if current_t - t < 10.0]  # Rolling 10s window
@@ -290,7 +290,7 @@ async def analyze_traffic(traffic_data: dict):
             final_risk = min(1.0, final_risk + correlation_penalty)
             explanations.append(f"Event Correlation Engine: Threat Escalated. Recorded {anomaly_count} distinct attacks from IP {client_ip} within 60s.")
             
-        # 2️⃣ Attack Pattern Memory (Lightweight Learning)
+        # 2ï¸âƒ£ Attack Pattern Memory (Lightweight Learning)
         ip_historical_memory[client_ip] += 1
         historical_count = ip_historical_memory[client_ip]
         if historical_count > 1:
@@ -299,7 +299,7 @@ async def analyze_traffic(traffic_data: dict):
             final_risk = min(1.0, final_risk + memory_penalty)
             explanations.append(f"Attack Pattern Memory: Known repeat offender ({historical_count} historical incidents).")
 
-        # 4️⃣ Threat Escalation Score (Lifecycle tracking)
+        # 4ï¸âƒ£ Threat Escalation Score (Lifecycle tracking)
         if "Scanner" in threat_type:
             macro_stage = "Reconnaissance"
         elif "Brute Force" in threat_type:
@@ -338,13 +338,14 @@ async def analyze_traffic(traffic_data: dict):
         
     return result
 
-@sio.on("connect")
+@Flakes8387.on("connect")
 async def connect(sid, environ):
     print(f"Client connected: {sid}")
 
-@sio.on("disconnect")
+@Flakes8387.on("disconnect")
 def disconnect(sid):
     print(f"Client disconnected: {sid}")
 
 # Wrap the FastAPI application into the Socket.IO ASGI application so they run seamlessly on the same port globally.
 app = socketio.ASGIApp(sio, other_asgi_app=app)
+

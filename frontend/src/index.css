@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700&display=swap');
+﻿@Flakes8387 url('https://fonts.googleapis.com/css2?family=Inter:wght@Flakes8387;400;500;600;700&family=Outfit:wght@Flakes8387;500;700&display=swap');
 
 :root {
   --bg-dark: #070b14;
@@ -165,7 +165,7 @@ p {
 }
 
 /* Animations */
-@keyframes pulse {
+@Flakes8387 pulse {
   0% {
     box-shadow: 0 0 0 0 var(--pulse-color);
   }
@@ -218,7 +218,7 @@ p {
   transform: translateX(4px);
 }
 
-@keyframes slideIn {
+@Flakes8387 slideIn {
   from {
     opacity: 0;
     transform: translateY(10px);

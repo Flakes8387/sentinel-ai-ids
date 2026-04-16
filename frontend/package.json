@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
@@ -18,10 +18,10 @@
     "socket.io-client": "^4.8.3"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
-    "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.1",
+    "@Flakes8387/js": "^9.39.1",
+    "@Flakes8387/react": "^19.2.7",
+    "@Flakes8387/react-dom": "^19.2.3",
+    "@Flakes8387/plugin-react": "^5.1.1",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
@@ -29,3 +29,4 @@
     "vite": "^7.3.1"
   }
 }
+
